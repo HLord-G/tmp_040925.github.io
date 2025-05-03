@@ -47,6 +47,71 @@ for (let i = 1; i <= 6; i++) {
 };
 
 
+
+
+for (let i = 1; i <= 10; i++) {
+        const itemId = `[animatiomotion="cards_${i}"]`;
+      
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: itemId,
+            start: "top 40%",
+            toggleActions: "play none none none"
+          },
+          defaults: { duration: 0.1 }
+        })
+        .to(itemId, {
+          duration: 0.6,
+          opacity: 1,
+          onStart: () => {
+            document.querySelector(itemId).classList.add('tilt-in-bottom-2');
+          }
+        });
+      };
+
+ 
+    
+
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: '[animation="text_1"]',
+          start: "top 70%",
+          toggleActions: "play none none none"
+        },
+        defaults: { duration: 0.1 }
+      })
+      .to('[animation="text_1"]', {
+        duration: 0.2,
+        opacity: 1,
+        onStart: () => {
+          document.querySelector('[animation="text_1"]').classList.add('slide-in-blurred-bottom');
+        }
+      })
+      .to('[animation="text_2"]', {
+        duration: 0.4,
+        opacity: 1,
+        onStart: () => {
+          document.querySelector('[animation="text_2"]').classList.add('slide-in-blurred-bottom');
+        }
+      })
+      .to('[animation="text_3"]', {
+        duration: 0.6,
+        opacity: 1,
+        onStart: () => {
+          document.querySelector('[animation="text_3"]').classList.add('slide-in-blurred-bottom');
+        }
+      });
+
+ 
+
+
+
+
+
+
+
+
+
  
  
 gsap.timeline({
@@ -195,6 +260,42 @@ $(".hoverview").hover(
 	-webkit-animation: slide-in-blurred-left 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 	        animation: slide-in-blurred-left 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 }
+
+
+.tilt-in-bottom-2 {
+	-webkit-animation: tilt-in-bottom-2 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: tilt-in-bottom-2 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+ 
+ 
+@-webkit-keyframes tilt-in-bottom-2 {
+  0% {
+    -webkit-transform: rotateY(-30deg) translateY(300px) skewY(30deg);
+            transform: rotateY(-30deg) translateY(300px) skewY(30deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0deg) translateY(0) skewY(0deg);
+            transform: rotateY(0deg) translateY(0) skewY(0deg);
+    opacity: 1;
+  }
+}
+@keyframes tilt-in-bottom-2 {
+  0% {
+    -webkit-transform: rotateY(-30deg) translateY(300px) skewY(30deg);
+            transform: rotateY(-30deg) translateY(300px) skewY(30deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0deg) translateY(0) skewY(0deg);
+            transform: rotateY(0deg) translateY(0) skewY(0deg);
+    opacity: 1;
+  }
+}
+
+
+
 
  
 @-webkit-keyframes slide-in-blurred-left {
